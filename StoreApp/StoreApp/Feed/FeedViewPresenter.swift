@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class FeedViewPresenter: NSObject {
 
@@ -65,5 +66,17 @@ extension FeedViewPresenter: UITableViewDelegate {
         let category = feedSections[section].category
         headerView.configure(category)
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storeItems = feedSections[indexPath.section].storeItems
+        let storeItem = storeItems[indexPath.row]
+        
+        let toastingText = """
+                            \(storeItem.title)
+                            \(storeItem.discountedPrice ?? storeItem.originalPrice ?? "")
+                            """
+        Toast(text: toastingText).show()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
