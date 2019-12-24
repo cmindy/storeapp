@@ -7,8 +7,12 @@
 //
 
 import Foundation
-    
-class StoreService {
+
+protocol StoreServiceType {
+    func chan(of categories: StoreAPI, completion: @escaping (Result<[StoreItem], StoreError>) -> Void)
+}
+
+final class StoreService: StoreServiceType {
     private let networking: Router<StoreAPI>
     
     init(networking: Router<StoreAPI>) {
@@ -25,5 +29,9 @@ class StoreService {
     
     func side(completion: @escaping (Result<[StoreItem], StoreError>) -> Void) {
         networking.request(.side, completion: completion)
+    }
+    
+    func chan(of categories: StoreAPI, completion: @escaping (Result<[StoreItem], StoreError>) -> Void) {
+        networking.request(categories, completion: completion)
     }
 }
