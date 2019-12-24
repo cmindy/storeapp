@@ -20,6 +20,7 @@
 		FA2C926223DD9107008985B1 /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C926123DD9107008985B1 /* StoreError.swift */; };
 		FA2C926623DD9107008985B1 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C926523DD9107008985B1 /* EndPointType.swift */; };
 		FA2C926823DD9107008985B1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C926723DD9107008985B1 /* Router.swift */; };
+		FA2C926A23DD9107008985B1 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C926923DD9107008985B1 /* StoreService.swift */; };
 		FA7FD74D23979A9A0059C735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD74C23979A9A0059C735 /* AppDelegate.swift */; };
 		FA7FD75423979A9A0059C735 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7FD75223979A9A0059C735 /* Main.storyboard */; };
 		FA7FD75623979A9E0059C735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7FD75523979A9E0059C735 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		FA2C926123DD9107008985B1 /* StoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
 		FA2C926523DD9107008985B1 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		FA2C926723DD9107008985B1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FA2C926923DD9107008985B1 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		FA7FD74923979A9A0059C735 /* StoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7FD74C23979A9A0059C735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7FD75323979A9A0059C735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				FA2C926523DD9107008985B1 /* EndPointType.swift */,
 				FA2C925F23DD9107008985B1 /* StoreAPI.swift */,
 				FA2C926123DD9107008985B1 /* StoreError.swift */,
+				FA2C926923DD9107008985B1 /* StoreService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				FA01677223A69DB5003FC0ED /* StoreItemCategory.swift in Sources */,
 				FAA571B7239F909800C7B301 /* FeedViewPresenter.swift in Sources */,
 				FA7FD76A2398D5B30059C735 /* FeedViewController.swift in Sources */,
+				FA2C926A23DD9107008985B1 /* StoreService.swift in Sources */,
 				FA7FD74D23979A9A0059C735 /* AppDelegate.swift in Sources */,
 				FA7FD76D2398D88B0059C735 /* ReuseIdentifiers.swift in Sources */,
 				FA7FD78323992E560059C735 /* BadgeListCell.swift in Sources */,
