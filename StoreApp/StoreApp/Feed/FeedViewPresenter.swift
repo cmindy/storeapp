@@ -20,15 +20,19 @@ class FeedViewPresenter: NSObject {
     }
     
     func fetchFeed() {
-        storeService.chan(of: .main) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let items):
-                let section = FeedSection(category: .main, storeItems: items)
-                self.feedSections.append(section)
-                NotificationCenter.default.post(name: FeedEvent.itemDidUpdated.name, object: nil)
-            case .failure(let error):
-                print(error.localizedDescription)
+        let apis = StoreAPI.allCases
+        for (index, api) in apis.enumerated() {
+            storeService.chan(of: api) { [weak self] result in
+                guard let strongSelf = self else { return }
+                switch result {
+                case .success(let items):
+                    guard let category = StoreItemCategory(rawValue: api.rawValue) else { return }
+                    let section = FeedSection(category: category, storeItems: items)
+                    NotificationCenter.default.post(name: FeedEvent.itemDidUpdated.name, object: nil, userInfo: ["sections": IndexSet(integer: index)])
+                    strongSelf.feedSections.append(section)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
     }
