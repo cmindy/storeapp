@@ -13,22 +13,22 @@ class FeedViewPresenter: NSObject {
 
     // MARK: - Properties
     
-    private var feedProvider: FeedDataProvider
     private var feedSections: [FeedSection] = []
-    
-    init(feedDataProvider: FeedDataProvider) {
-        self.feedProvider = feedDataProvider
+    private let storeService: StoreServiceType
+    init(storeService: StoreServiceType) {
+        self.storeService = storeService
     }
     
     func fetchFeed() {
-        feedProvider.request(assets: StoreItemCategory.allCases) { [weak self] result in
-            guard let strongSelf = self else { return }
+        storeService.chan(of: .main) { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case .success(let sections):
-                strongSelf.feedSections = sections
+            case .success(let items):
+                let section = FeedSection(category: .main, storeItems: items)
+                self.feedSections.append(section)
                 NotificationCenter.default.post(name: FeedEvent.itemDidUpdated.name, object: nil)
             case .failure(let error):
-                print(error.message)
+                print(error.localizedDescription)
             }
         }
     }
