@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NetworkingKit
 
 protocol StoreServiceType {
     func chan(of categories: StoreAPI, completion: @escaping (Result<[StoreItem], StoreError>) -> Void)

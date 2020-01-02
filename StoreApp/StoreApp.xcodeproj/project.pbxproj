@@ -168,6 +168,7 @@
 		FA2C929023E17675008985B1 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				FA2C925D23DD9107008985B1 /* HTTP.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -175,6 +176,8 @@
 		FA2C929123E17675008985B1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FA2C926523DD9107008985B1 /* EndPointType.swift */,
+				FA2C926723DD9107008985B1 /* Router.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 		FA2C929223E17675008985B1 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				FA2C926123DD9107008985B1 /* StoreError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -334,11 +338,7 @@
 		FAD5AD3C23B3524B0008049A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				FA2C925D23DD9107008985B1 /* HTTP.swift */,
-				FA2C926723DD9107008985B1 /* Router.swift */,
-				FA2C926523DD9107008985B1 /* EndPointType.swift */,
 				FA2C925F23DD9107008985B1 /* StoreAPI.swift */,
-				FA2C926123DD9107008985B1 /* StoreError.swift */,
 				FA2C926923DD9107008985B1 /* StoreService.swift */,
 			);
 			path = Networking;
