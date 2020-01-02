@@ -11,6 +11,7 @@ import Foundation
 protocol EndPointType {
     var baseURLString: String { get }
     var method: HTTP.Method { get }
+    var method: HTTPMethod { get }
     var path: String { get }
     func asURLRequest() throws -> URLRequest
 }

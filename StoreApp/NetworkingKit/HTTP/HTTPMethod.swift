@@ -10,9 +10,7 @@ import Foundation
 
 typealias HTTPHeaders = [String: String]
 
-enum HTTP {
-    enum Method: String {
-        case get = "GET"
-        case post = "POST"
-    }
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
 }
