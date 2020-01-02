@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum StoreError: Error {
+public enum StoreError: Error {
     case unknown
     case invalidURL(url: String)
     case requestFailed

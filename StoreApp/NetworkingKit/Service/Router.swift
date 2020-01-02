@@ -8,10 +8,10 @@
 
 import Foundation
 
-final class Router<EndPoint: EndPointType> {
+public final class Router<EndPoint: EndPointType> {
     private let decoder = JSONDecoder()
     
-    func request<T: Decodable>(_ route: EndPoint, completion: @escaping (Result<T, StoreError>) -> Void) {
+    public func request<T: Decodable>(_ route: EndPoint, completion: @escaping (Result<T, StoreError>) -> Void) {
         let session = URLSession.shared
         do {
             let request = try route.asURLRequest()
