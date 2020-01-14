@@ -12,9 +12,6 @@
 		FA01676E23A68D12003FC0ED /* FeedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01676D23A68D12003FC0ED /* FeedEvent.swift */; };
 		FA01677023A68FCC003FC0ED /* BadgeListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01676F23A68FCC003FC0ED /* BadgeListViewDataSource.swift */; };
 		FA01677223A69DB5003FC0ED /* StoreItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01677123A69DB5003FC0ED /* StoreItemCategory.swift */; };
-		FA01679823A7B3B5003FC0ED /* FeedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01679723A7B3B5003FC0ED /* FeedSection.swift */; };
-		FA01679A23A7B47C003FC0ED /* FeedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01679923A7B47C003FC0ED /* FeedError.swift */; };
-		FA01679C23A7BCED003FC0ED /* FeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA01679B23A7BCED003FC0ED /* FeedDataProvider.swift */; };
 		FA2C928723E17675008985B1 /* NetworkingKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA2C928523E17675008985B1 /* NetworkingKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA2C928A23E17675008985B1 /* NetworkingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2C928323E17675008985B1 /* NetworkingKit.framework */; };
 		FA2C928B23E17675008985B1 /* NetworkingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA2C928323E17675008985B1 /* NetworkingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -107,9 +104,6 @@
 		FA01676D23A68D12003FC0ED /* FeedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedEvent.swift; sourceTree = "<group>"; };
 		FA01676F23A68FCC003FC0ED /* BadgeListViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeListViewDataSource.swift; path = StoreApp/Feed/BadgeListViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		FA01677123A69DB5003FC0ED /* StoreItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCategory.swift; sourceTree = "<group>"; };
-		FA01679723A7B3B5003FC0ED /* FeedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSection.swift; sourceTree = "<group>"; };
-		FA01679923A7B47C003FC0ED /* FeedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedError.swift; sourceTree = "<group>"; };
-		FA01679B23A7BCED003FC0ED /* FeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataProvider.swift; sourceTree = "<group>"; };
 		FA2C925D23DD9107008985B1 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		FA2C925F23DD9107008985B1 /* StoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAPI.swift; sourceTree = "<group>"; };
 		FA2C926523DD9107008985B1 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
@@ -179,23 +173,6 @@
 				A663E23C83D9733BAD5E952E /* Pods_StoreApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FA01679523A7B09B003FC0ED /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				FA01677123A69DB5003FC0ED /* StoreItemCategory.swift */,
-				FA01679723A7B3B5003FC0ED /* FeedSection.swift */,
-				FA01679923A7B47C003FC0ED /* FeedError.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		FA01679623A7B17A003FC0ED /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		FA2C928423E17675008985B1 /* NetworkingKit */ = {
@@ -317,7 +294,6 @@
 				FA7FD76123979C160059C735 /* Cell */,
 				FA7FD7692398D5B30059C735 /* FeedViewController.swift */,
 				FAA571B6239F909800C7B301 /* FeedViewPresenter.swift */,
-				FA01679B23A7BCED003FC0ED /* FeedDataProvider.swift */,
 				FA01676F23A68FCC003FC0ED /* BadgeListViewDataSource.swift */,
 				FA7FD75223979A9A0059C735 /* Main.storyboard */,
 				FA01676D23A68D12003FC0ED /* FeedEvent.swift */,
@@ -347,8 +323,7 @@
 		FA7FD76E2398DA1F0059C735 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA01679523A7B09B003FC0ED /* Domain */,
-				FA01679623A7B17A003FC0ED /* Entity */,
+				FA01677123A69DB5003FC0ED /* StoreItemCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -638,15 +613,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7FD76423979C430059C735 /* FeedListCell.swift in Sources */,
-				FA01679823A7B3B5003FC0ED /* FeedSection.swift in Sources */,
-				FA01679A23A7B47C003FC0ED /* FeedError.swift in Sources */,
 				FA01677223A69DB5003FC0ED /* StoreItemCategory.swift in Sources */,
 				FAA571B7239F909800C7B301 /* FeedViewPresenter.swift in Sources */,
 				FA7FD76A2398D5B30059C735 /* FeedViewController.swift in Sources */,
 				FA7FD74D23979A9A0059C735 /* AppDelegate.swift in Sources */,
 				FA7FD76D2398D88B0059C735 /* ReuseIdentifiers.swift in Sources */,
 				FA7FD78323992E560059C735 /* BadgeListCell.swift in Sources */,
-				FA01679C23A7BCED003FC0ED /* FeedDataProvider.swift in Sources */,
 				FA01677023A68FCC003FC0ED /* BadgeListViewDataSource.swift in Sources */,
 				FA7FD77D2399241F0059C735 /* FeedCategoryHeaderView.swift in Sources */,
 				FA01676E23A68D12003FC0ED /* FeedEvent.swift in Sources */,
