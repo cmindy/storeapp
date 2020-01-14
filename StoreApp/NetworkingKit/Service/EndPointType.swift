@@ -9,8 +9,9 @@
 import Foundation
 
 public protocol EndPointType {
-    var baseURLString: String { get }
-    var method: HTTPMethod { get }
+    var baseURL: URL { get }
     var path: String { get }
-    func asURLRequest() throws -> URLRequest
+    var method: HTTPMethod { get }
+    var task: HTTPTask { get }
+    var headers: HTTPHeaders? { get }
 }
