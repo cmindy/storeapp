@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct StoreItem: Codable {
-    let detailHash: String
-    let image: String
-    let title: String
-    let description: String
-    let originalPrice: String?
-    let discountedPrice: String?
-    let deliveryTypes: [String]
-    let badges: [String]?
+public struct StoreItem: Codable {
+    public let detailHash: String
+    public let image: String
+    public let title: String
+    public let description: String
+    public let originalPrice: String?
+    public let discountedPrice: String?
+    public let deliveryTypes: [String]
+    public let badges: [String]?
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case detailHash = "detail_hash"
         case image
         case title
