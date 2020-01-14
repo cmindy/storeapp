@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         if let rootViewController = window?.rootViewController as? FeedViewController {
-            let feedViewPresenter = FeedViewPresenter(storeService: StoreService(networking: Router<StoreAPI>()))
+            let feedViewPresenter = FeedViewPresenter(storeService: StoreService())
             rootViewController.presenter = feedViewPresenter
         }
         return true

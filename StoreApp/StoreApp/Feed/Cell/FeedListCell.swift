@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class FeedListCell: UITableViewCell, ReusableID {
     

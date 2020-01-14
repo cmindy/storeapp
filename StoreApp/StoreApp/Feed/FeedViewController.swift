@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class FeedViewController: UIViewController {
 
@@ -15,7 +16,9 @@ class FeedViewController: UIViewController {
     var presenter: FeedViewPresenter? {
         didSet {
             loadViewIfNeeded()
-            presenter?.fetchFeed()
+            DispatchQueue.global().async {
+                self.presenter?.fetchFeed()
+            }
         }
     }
     
@@ -43,14 +46,26 @@ class FeedViewController: UIViewController {
                                                selector: #selector(reloadTableView),
                                                name: FeedEvent.itemDidUpdated.name,
                                                object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(displayAlert),
+                                               name: FeedEvent.loadFailed.name,
+                                               object: nil)
     }
     
     // MARK: - Events
     
-    @objc private func reloadTableView() {
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.feedTableView.reloadData()
+    @objc private func reloadTableView(_ notification: Notification) {
+        guard let sections = notification.userInfo?["section"] as? Int else { return }
+        print("section::::::::::: \(sections)")
+        self.feedTableView.reloadSections([sections], with: .automatic)
+    }
+    
+    @objc private func displayAlert(_ notification: Notification) {
+        guard let error = notification.userInfo?["error"] as? Error else { return }
+        print(error.localizedDescription)
+    }
+    
         }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 enum FeedEvent: String, NotificationNameable {
     case itemDidUpdated
+    case loadFailed
     
     var name: NSNotification.Name {
         return NSNotification.Name(rawValue: rawValue)

@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum StoreItemCategory: String, CaseIterable {
-    case main
-    case soup
-    case side
+enum StoreItemCategory: Int, CaseIterable {
+    case main = 0
+    case soup = 1
+    case side = 2
     
     var titleText: String {
         switch self {
