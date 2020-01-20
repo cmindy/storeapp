@@ -16,6 +16,7 @@ class FeedViewController: UIViewController {
     var presenter: FeedViewPresenter? {
         didSet {
             loadViewIfNeeded()
+            /// 여기서 안해주면 화면 프리징!
             DispatchQueue.global().async {
                 self.presenter?.fetchFeed()
             }
@@ -63,10 +64,19 @@ class FeedViewController: UIViewController {
     
     @objc private func displayAlert(_ notification: Notification) {
         guard let error = notification.userInfo?["error"] as? Error else { return }
-        print(error.localizedDescription)
+        
+        handle(error)
     }
     
+    private func handle(_ error: Error) {
+        let alert = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let retry = UIAlertAction(title: "Retry", style: .default) { [weak self] _ in
+            self?.presenter?.fetchFeed()
         }
+        alert.addActions([cancel, retry])
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 

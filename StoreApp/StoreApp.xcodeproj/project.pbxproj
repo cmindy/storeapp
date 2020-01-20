@@ -44,6 +44,8 @@
 		FA7FD78323992E560059C735 /* BadgeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD78123992E560059C735 /* BadgeListCell.swift */; };
 		FA7FD78423992E560059C735 /* BadgeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7FD78223992E560059C735 /* BadgeListCell.xib */; };
 		FAA571B7239F909800C7B301 /* FeedViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA571B6239F909800C7B301 /* FeedViewPresenter.swift */; };
+		FAD79A2A23CE554C00EC8192 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD79A2923CE554C00EC8192 /* UIAlertController+.swift */; };
+		FAD79A2C23CE585B00EC8192 /* Result+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD79A2B23CE585B00EC8192 /* Result+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,8 @@
 		FA7FD78123992E560059C735 /* BadgeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCell.swift; sourceTree = "<group>"; };
 		FA7FD78223992E560059C735 /* BadgeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeListCell.xib; sourceTree = "<group>"; };
 		FAA571B6239F909800C7B301 /* FeedViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewPresenter.swift; sourceTree = "<group>"; };
+		FAD79A2923CE554C00EC8192 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
+		FAD79A2B23CE585B00EC8192 /* Result+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				FA7FD76C2398D88B0059C735 /* ReuseIdentifiers.swift */,
+				FAD79A2B23CE585B00EC8192 /* Result+.swift */,
+				FAD79A2923CE554C00EC8192 /* UIAlertController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -617,9 +623,11 @@
 				FAA571B7239F909800C7B301 /* FeedViewPresenter.swift in Sources */,
 				FA7FD76A2398D5B30059C735 /* FeedViewController.swift in Sources */,
 				FA7FD74D23979A9A0059C735 /* AppDelegate.swift in Sources */,
+				FAD79A2A23CE554C00EC8192 /* UIAlertController+.swift in Sources */,
 				FA7FD76D2398D88B0059C735 /* ReuseIdentifiers.swift in Sources */,
 				FA7FD78323992E560059C735 /* BadgeListCell.swift in Sources */,
 				FA01677023A68FCC003FC0ED /* BadgeListViewDataSource.swift in Sources */,
+				FAD79A2C23CE585B00EC8192 /* Result+.swift in Sources */,
 				FA7FD77D2399241F0059C735 /* FeedCategoryHeaderView.swift in Sources */,
 				FA01676E23A68D12003FC0ED /* FeedEvent.swift in Sources */,
 				FA7FD77423991ECD0059C735 /* AttributedStyleHelper.swift in Sources */,

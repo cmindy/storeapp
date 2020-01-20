@@ -26,17 +26,16 @@ class FeedViewPresenter: NSObject {
         for (index, api) in StoreAPI.allCases.enumerated() {
             storeService.fetchChan(of: api) { [weak self] result in
                 guard let self = self else { return }
-                switch result {
-                case .success(let items):
+                result.success { items in
                     guard let category = StoreItemCategory(rawValue: index) else { return }
                     self.data[category] = items
                     NotificationCenter.default.post(name: FeedEvent.itemDidUpdated.name,
                                                     object: nil,
                                                     userInfo: ["section": index])
-                case .failure(let error):
+                }.catch { error in
                     NotificationCenter.default.post(name: FeedEvent.loadFailed.name,
-                                                                       object: nil,
-                                                                       userInfo: ["error": error])
+                                                                   object: nil,
+                                                                   userInfo: ["error": error])
                 }
             }
         }
