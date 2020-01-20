@@ -15,12 +15,11 @@ class FeedViewPresenter: NSObject {
     // MARK: - Properties
     
     private let storeService: StoreServiceType
-
+    private var feedSections: [StoreItemCategory: [StoreItem]] = [:]
+    
     init(storeService: StoreServiceType) {
         self.storeService = storeService
     }
-    
-    var data: [StoreItemCategory: [StoreItem]] = [:]
     
     func fetchFeed() {
         for (index, api) in StoreAPI.allCases.enumerated() {
@@ -28,14 +27,14 @@ class FeedViewPresenter: NSObject {
                 guard let self = self else { return }
                 result.success { items in
                     guard let category = StoreItemCategory(rawValue: index) else { return }
-                    self.data[category] = items
+                    self.feedSections[category] = items
                     NotificationCenter.default.post(name: FeedEvent.itemDidUpdated.name,
                                                     object: nil,
                                                     userInfo: ["section": index])
                 }.catch { error in
                     NotificationCenter.default.post(name: FeedEvent.loadFailed.name,
-                                                                   object: nil,
-                                                                   userInfo: ["error": error])
+                                                    object: nil,
+                                                    userInfo: ["error": error])
                 }
             }
         }
@@ -51,22 +50,20 @@ extension FeedViewPresenter: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let category = StoreItemCategory(rawValue: section),
-            let chan = data[category] {
+            let chan = feedSections[category] {
             return chan.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FeedListCell.reuseID, for: indexPath) as? FeedListCell else {
-            return .init()
+        let cell = tableView.dequeueReusableCell(FeedListCell.self, for: indexPath)
+        
+        if let category = StoreItemCategory(rawValue: indexPath.section),
+            let chan = feedSections[category]?[indexPath.row] {
+            cell.configure(chan)
         }
         
-        guard let category = StoreItemCategory(rawValue: indexPath.section),
-            let chan = data[category]?[indexPath.row] else {
-                return cell
-        }
-        cell.configure(chan)
         
         return cell
     }
@@ -76,9 +73,8 @@ extension FeedViewPresenter: UITableViewDataSource {
 
 extension FeedViewPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FeedCategoryHeaderView.reuseID) as? FeedCategoryHeaderView else {
-            return .init()
-        }
+        let headerView = tableView.dequeueReusableHeaderFooterView(FeedCategoryHeaderView.self)
+        
         if let category = StoreItemCategory(rawValue: section) {
             headerView.configure(category)
         }
@@ -87,7 +83,7 @@ extension FeedViewPresenter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let category = StoreItemCategory(rawValue: indexPath.section),
-            let chan = data[category]?[indexPath.row] else {
+            let chan = feedSections[category]?[indexPath.row] else {
                 return
         }
         

@@ -9,7 +9,7 @@
 import UIKit
 import StoreKit
 
-class FeedListCell: UITableViewCell, ReusableID {
+class FeedListCell: UITableViewCell, ReusableViewType {
     
     // MARK: - Properties
     

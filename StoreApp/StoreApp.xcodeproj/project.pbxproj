@@ -36,7 +36,7 @@
 		FA7FD76423979C430059C735 /* FeedListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD76223979C430059C735 /* FeedListCell.swift */; };
 		FA7FD76523979C430059C735 /* FeedListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7FD76323979C430059C735 /* FeedListCell.xib */; };
 		FA7FD76A2398D5B30059C735 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD7692398D5B30059C735 /* FeedViewController.swift */; };
-		FA7FD76D2398D88B0059C735 /* ReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD76C2398D88B0059C735 /* ReuseIdentifiers.swift */; };
+		FA7FD76D2398D88B0059C735 /* ReusableViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD76C2398D88B0059C735 /* ReusableViewType.swift */; };
 		FA7FD772239909BA0059C735 /* StoreColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD771239909BA0059C735 /* StoreColor.swift */; };
 		FA7FD77423991ECD0059C735 /* AttributedStyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD77323991ECD0059C735 /* AttributedStyleHelper.swift */; };
 		FA7FD77D2399241F0059C735 /* FeedCategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FD77C2399241F0059C735 /* FeedCategoryHeaderView.swift */; };
@@ -129,7 +129,7 @@
 		FA7FD76223979C430059C735 /* FeedListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListCell.swift; sourceTree = "<group>"; };
 		FA7FD76323979C430059C735 /* FeedListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedListCell.xib; sourceTree = "<group>"; };
 		FA7FD7692398D5B30059C735 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		FA7FD76C2398D88B0059C735 /* ReuseIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiers.swift; sourceTree = "<group>"; };
+		FA7FD76C2398D88B0059C735 /* ReusableViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewType.swift; sourceTree = "<group>"; };
 		FA7FD76F2398DA980059C735 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 		FA7FD771239909BA0059C735 /* StoreColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreColor.swift; sourceTree = "<group>"; };
 		FA7FD77323991ECD0059C735 /* AttributedStyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStyleHelper.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 		FA7FD76B2398D82F0059C735 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FA7FD76C2398D88B0059C735 /* ReuseIdentifiers.swift */,
+				FA7FD76C2398D88B0059C735 /* ReusableViewType.swift */,
 				FAD79A2B23CE585B00EC8192 /* Result+.swift */,
 				FAD79A2923CE554C00EC8192 /* UIAlertController+.swift */,
 			);
@@ -624,7 +624,7 @@
 				FA7FD76A2398D5B30059C735 /* FeedViewController.swift in Sources */,
 				FA7FD74D23979A9A0059C735 /* AppDelegate.swift in Sources */,
 				FAD79A2A23CE554C00EC8192 /* UIAlertController+.swift in Sources */,
-				FA7FD76D2398D88B0059C735 /* ReuseIdentifiers.swift in Sources */,
+				FA7FD76D2398D88B0059C735 /* ReusableViewType.swift in Sources */,
 				FA7FD78323992E560059C735 /* BadgeListCell.swift in Sources */,
 				FA01677023A68FCC003FC0ED /* BadgeListViewDataSource.swift in Sources */,
 				FAD79A2C23CE585B00EC8192 /* Result+.swift in Sources */,
